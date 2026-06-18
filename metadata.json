@@ -1,0 +1,6 @@
+{
+  "name": "Khazain Al-Ard Document Center",
+  "description": "Official PDF document center for Khazain Al-Ard Investment Packages, featuring bilingual (Arabic/English) brochures, dynamic content management, and cloud-synced configuration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

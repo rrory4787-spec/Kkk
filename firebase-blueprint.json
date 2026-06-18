@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "Config": {
+      "title": "Global Configuration",
+      "description": "Global settings for the document center, such as contact info and lawyer details.",
+      "type": "object",
+      "properties": {
+        "whatsapp": { "type": "string", "description": "WhatsApp contact number" },
+        "lawyerAr": { "type": "string", "description": "Lawyer office name in Arabic" },
+        "lawyerEn": { "type": "string", "description": "Lawyer office name in English" },
+        "location": { "type": "string", "description": "Physical location/city" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["whatsapp", "lawyerAr", "lawyerEn", "location"]
+    },
+    "Package": {
+      "title": "Investment Package",
+      "description": "Details for a specific investment package (Smart, Advanced, VIP).",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "badgeAr": { "type": "string" },
+        "badgeEn": { "type": "string" },
+        "descAr": { "type": "string" },
+        "descEn": { "type": "string" },
+        "introAr": { "type": "string" },
+        "introEn": { "type": "string" },
+        "f1TitleAr": { "type": "string" },
+        "f1TitleEn": { "type": "string" },
+        "f1TextAr": { "type": "string" },
+        "f1TextEn": { "type": "string" },
+        "f2TitleAr": { "type": "string" },
+        "f2TitleEn": { "type": "string" },
+        "f2TextAr": { "type": "string" },
+        "f2TextEn": { "type": "string" },
+        "tr1ValueAr": { "type": "string" },
+        "tr1ValueEn": { "type": "string" },
+        "tr2ValueAr": { "type": "string" },
+        "tr2ValueEn": { "type": "string" },
+        "tr3ValueAr": { "type": "string" },
+        "tr3ValueEn": { "type": "string" },
+        "tr4ValueAr": { "type": "string" },
+        "tr4ValueEn": { "type": "string" },
+        "showCustodyRow": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["badgeAr", "badgeEn", "descAr", "descEn"]
+    },
+    "Admin": {
+      "title": "Administrator",
+      "description": "User with administrative privileges.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" }
+      },
+      "required": ["email"]
+    }
+  },
+  "firestore": {
+    "/config/global": {
+      "schema": "Config",
+      "description": "Single document for global settings."
+    },
+    "/packages/{packageId}": {
+      "schema": "Package",
+      "description": "Collection of investment packages."
+    },
+    "/admins/{userId}": {
+      "schema": "Admin",
+      "description": "Registry of admin users."
+    }
+  }
+}
